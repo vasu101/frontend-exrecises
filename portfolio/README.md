@@ -1,5 +1,7 @@
 # Semantic HTML CV
 
+<img width="685" height="1624" alt="simple-portfolio" src="https://github.com/user-attachments/assets/80601761-7f67-4a15-9b13-0bb2e9b21c66" />
+
 A single-page CV built with semantic HTML to demonstrate proper web structure and SEO practices.
 
 ## Aim
