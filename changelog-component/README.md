@@ -17,10 +17,6 @@ A changelog component that displays recent updates and changes in a visually app
 - **CSS Positioning** - Advanced use of pseudo-elements for visual effects
 - **Hover Effects** - Interactive button with smooth transitions
 
-## 🚀 Demo
-
-[Live Demo](#) *(Add your GitHub Pages link here)*
-
 ## 🛠️ Technologies Used
 
 - HTML5
@@ -111,68 +107,6 @@ The component adapts to mobile devices with:
     }
 }
 ```
-
-## 🚦 Getting Started
-
-1. Clone the repository
-```bash
-git clone https://github.com/yourusername/changelog-component.git
-```
-
-2. Open `index.html` in your browser
-```bash
-cd changelog-component
-open index.html
-```
-
-That's it! No build process or dependencies required.
-
-## 🔧 Customization
-
-### Change Colors
-Modify the color values in `styles.css`:
-```css
-.timeline::before {
-    background-color: black; /* Change timeline color */
-}
-
-.dot {
-    background-color: black; /* Change dot color */
-}
-
-button {
-    background-color: black; /* Change button color */
-}
-```
-
-### Adjust Spacing
-Modify grid gap and margins:
-```css
-.timeline-item {
-    gap: 40px; /* Adjust spacing between columns */
-    margin-bottom: 40px; /* Adjust spacing between entries */
-}
-```
-
-### Add More Entries
-Simply duplicate a `timeline-item` in the HTML:
-```html
-<li class="timeline-item">
-    <time datetime="2024-XX-XX" class="date">Your Date</time>
-    <div class="dot"></div>
-    <p class="content">Your changelog entry</p>
-</li>
-```
-
-## 📚 Future Enhancements
-
-- [ ] Add animations for timeline items on scroll
-- [ ] Include icons or tags for different types of updates
-- [ ] Add filtering functionality (bug fixes, features, etc.)
-- [ ] Dark mode toggle
-- [ ] Expandable entries with more details
-- [ ] Load more/pagination functionality
-
 ## 🤝 Contributing
 
 This is a learning project, but suggestions and improvements are welcome!
