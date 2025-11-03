@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card One</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="testimonials-container">
+        <div class="testimonials-grid">
+            <!--CARD 1: Speech Bubble Card-->
+            <article class="card card--bubble">
+                <blockquote class="card__qoute card__qoute--bubble">
+                    I have been solving all the project ideas on roadmap.sh and I an sueprised how far I have come from where I started
+                    <br><br>
+                    Highly recommended!
+                </blockquote>
+                <div class="card__author">
+                    <img src="../images/favicon.png" alt="Profile picture of Artem Jones" class="card__profile-pic">
+                    <div class="card__author-info">
+                        <h3 class="card__author-name">Artem Jones</h3>
+                        <p class="card_author-title">Junior Frontend Developer</p>
+                    </div>
+                </div>
+            </article>
+
+            <!--CARD 2: Simple Border Card-->
+            <article class="card card--simple">
+                <blockquote class="card__qoute card__qoute--simple">
+                    Since starting my career in 2021, I have only followed one resource, roadmap.sh, it truly helpmed me go from 0 to having a job and changing the financial trajectory of my family
+                </blockquote>
+                <div class="card__author">
+                    <img src="../images/favicon.png" alt="Profile picture of Artem Jones" class="card__profile-pic">
+                    <div class="card__author-info">
+                        <h3 class="card__author-name">Artem Jones</h3>
+                        <p class="card__author-title">Junior Frontend Developer</p>
+                    </div>
+                </div>
+            </article>
+
+            <!--CARD 3: Split Card (Photo + Dark Content)-->
+            <article class="card card--split">
+                <div class="card__photo">
+                    <img src="../images/favicon.png" alt="Profile picture of Artem Jones" class="card__profile-pic">
+                </div>
+                <div class="card__content--dark">
+                    <div>
+                        <div class="card__stars" aria-label="5 star rating">
+                            <span class="card__star" aria-hidden="true">★</span>
+                            <span class="card__star" aria-hidden="true">★</span>
+                            <span class="card__star" aria-hidden="true">★</span>
+                            <span class="card__star" aria-hidden="true">★</span>
+                            <span class="card__star" aria-hidden="true">★</span>
+                        </div>
+                        <div class="card__author card__author--dark">
+                            <div class="card_author-info">
+                                <h3 class="card__author-name" style="color: #fff;">Jackie Mackle</h3>
+                                <p class="card__author-title">Engineering Manger</p>
+                            </div>
+                        </div>
+                    </div>
+                    <blockquote class="card__qoute card__qoute--dark">
+                        I find myself recommending roadmap.sh to all the internees or junior developers. It's a great wat to skill up and grow in your career.
+                    </blockquote>
+                </div>
+            </article>
+
+            <!--CARD 4: Carousel Card-->
+            <article class="card card--carousel">
+                <blockquote class="card__qoute card__qoute--carousel">
+                    roadmap.sh is an incredible resource. I was fortunate to discover it during my university days in 2018. Back ten, it was just a single respoitory with three images. It's amazing to see how much impact it has had on mllios of live since then.
+                </blockquote>
+                <div class="card__carousel">
+                    <button class="card__carousel-arrow" aria-label="Previos Testimonial">‹</button>
+                    <div class="card__carousel-images">
+                        <img src="../images/favicon.png" alt="Profile picture of Artem Jones" class="card__carousel-pic card__carousel-pic--blur">
+                        <img src="../images/favicon.png" alt="Profile picture of Artem Jones" class="card__carousel-pic card__carousel-pic--active">
+                        <img src="../images/favicon.png" alt="Profile picture of Artem Jones" class="card__carousel-pic card__carousel-pic--blur">
+                    </div>
+                    <button class="card__carousel-arrow" aria-label="Next testimonial">›</button>
+                </div>
+                <h3 class="card__carousel-name">Artem Jones</h3>
+            </article>
+        </div>
+    </div>
+</body>
+</html>
