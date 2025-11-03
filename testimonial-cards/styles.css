@@ -1,0 +1,366 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #000;
+    --color-white: #fff;
+    --color-gray-light: #f5f5f5;
+    --color-gray-medium: #999;
+    --color-gray-dark: #666;
+    --color-gold: #ffd700;
+    --color-accent: #ffeb3d;
+
+    --borer-radius-sm: 0.75rem;
+    --border-radius-md: 1.25rem;
+    --border-radius-lg: 1.5rem;
+
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 0.75rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.25rem;
+    --spacing-xl: 1.5rem;
+    --spacing-2xl: 2rem;
+    --spacing-3xl: 3rem;
+
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.15);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.2);
+
+    --transition: all 0.3s ease;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    padding: var(--spacing-2xl);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.testimonials-container {
+    max-width: 75rem;
+    width: 100%;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+}
+
+.card {
+    background: var(--color-white);
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ===== CARD WITH SPEECH BUBBLE ===== */
+.card--bubble {
+    padding: var(--spacing-lg);
+    background: transparent;
+    box-shadow: none;
+} 
+
+.card--bubble:hover {
+    transform: none;
+}
+
+.card__qoute--bubble {
+    position: relative;
+    padding: var(--spacing-xl);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: var(--border-radius-lg);
+    margin-bottom: 2.5rem;
+    font-size: 1.125rem;
+    line-height: 1.7;
+}
+
+/* Speech bubble tail */
+.card__qoute--bubble::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 1rem solid transparent;
+    border-right: 1rem solid transparent;
+    border-top: 1rem solid var(--color-primary);
+    bottom: -1rem;
+    left: 2rem;
+}
+
+/* ===== SIMPLE CARD WITH BORDER ===== */
+.card--simple {
+    border: 2px solid var(--color-primary);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-xl);
+}
+
+.card__qoute--simple {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    margin-bottom: var(--spacing-xl);
+    color: var(--color-primary);
+}
+
+/* ===== SPLIT CARD (Photo + Content) ===== */
+.card--split {
+    background: none;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.card__photo {
+    background: var(--color-accent);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    margin-right: var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card__photo-img {
+    width: 15rem;
+    height: 15rem;
+    border-radius: var(--border-radius-md);
+    object-fit: cover;
+}
+
+.card__content--dark {
+    border-radius: var(--border-radius-lg);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: var(--spacing-2xl);
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card__stars {
+    display: flex;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-lg);
+}
+
+.card__star {
+    font-size: 2rem;
+    color: var(--color-gold);
+}
+
+.card__author--dark .card__author-name {
+    font-size: 1.875rem;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 600;
+}
+
+.card__author--dark .card__author-title {
+    font-size: 1rem;
+    color: var(--color-gray-medium);
+    margin-bottom: var(--spacing-xl);
+}
+
+.card__qoute--dark {
+    font-size: 1.125rem;
+    line-height: 1.7;
+}
+
+/* ===== CAROUSEL CARD ===== */
+.card--carousel {
+    grid-column: 1 / -1;
+    border: 2px solid var(--color-primary);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-3xl);
+    text-align: center;
+}
+
+.card__qoute--carousel {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    margin-bottom: var(--spacing-2xl);
+    color: var(--color-primary);
+    max-width: 50rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card__carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.card__carousel-arrow {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--color-primary);
+    transform: var(--transition);
+    padding: var(--spacing-sm);
+}
+
+.card__carousel-arrow:hover {
+    transform: scale(1.2);
+    color: var(--color-gray-dark);
+}
+
+.card__carousel-images {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+}
+
+/* ===== SHARED AUTHOR STYLES ===== */
+.card__author {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.card__profile-pic {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--color-gray-light);
+}
+
+.card__author-info {
+    text-align: left;
+}
+
+.card__author-name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: var(--color-primary);
+}
+
+.card__author-title {
+    font-size: 0.9375rem;
+    color: var(--color-primary);
+}
+
+/* ===== CAROUSEL PROFILE IMAGES ===== */
+.card__carousel-pic {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.card__carousel-pic--blur {
+    opacity: 0.4;
+    filter: grayscale(50%);
+    width: 4rem;
+    height: 4rem;
+}
+
+.card__carousel-pic--active {
+    border: 3px solid var(--color-primary);
+    box-shadow: var(--shadow-md);
+}
+
+.card__carousel-name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card--split {
+        grid-template-columns: 1fr;
+    }
+
+    .card__photo-img {
+        width: 100%;
+        height: auto;
+        max-width: 20rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: var(--spacing-md);
+    }
+
+    .testimonials-grid {
+        gap: var(--spacing-md);
+    }
+
+    .card-bubble {
+        padding: var(--spacing-md);
+    }
+
+    .card__qoute--bubble,
+    .card__qoute--simple,
+    .card__qoute--dark,
+    .card__qoute--carousel {
+        font-size: 1rem;
+    }
+
+    .card--carousel {
+        padding: var(--spacing-xl);
+    }
+
+    .card__carousel {
+        flex-direction: column;
+    }
+
+    .card__carousel-arrow {
+        display: none;
+    }
+
+    .card__author--dark .card__author-name {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .card__profile-pic,
+    .card__carousel-pic {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .card__carousel-pic--blur {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .card--simple,
+    .card__content--dark {
+        padding: var(--spacing-lg);
+    }
+
+    .card__photo-img {
+        width: 100%;
+        height: auto;
+    }
+}
