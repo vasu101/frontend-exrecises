@@ -1,7 +1,8 @@
 # Testimonial Cards
 
 A collection of four different testimonial card designs built with HTML and CSS.
-<img width="1004" height="1397" alt="testimonial-cards" src="https://github.com/user-attachments/assets/a67d8987-5670-4531-a742-df0811824424" />
+<img width="1324" height="1053" alt="127 0 0 1_5500_card1_index html" src="https://github.com/user-attachments/assets/37f74314-5898-4e0d-aca2-a00ef80dbc21" />
+
 
 ## Project Overview
 
