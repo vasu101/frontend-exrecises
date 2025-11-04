@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header class="page-header">
+        <h1 class="page-title">Calendar</h1>
+    </header>
+    <main class="calendar-container">
+        <div class="date-input-wrapper">
+            <label for="date-input" class="visually-hidden">Select date</label>
+            <input type="text"
+            id="date-input"
+            class="date-input"
+            placeholder="dd / mm / yyyy"
+            readonly
+            aria-label="Selected date"
+            >
+            <button type="button" class="calendar-icon-btn">
+                <svg class="calendar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+            </button>
+        </div>
+
+        <div class="calendar-picker" role="application" aria-label="Calendar date picker">
+            <div class="calendar-header">
+                <button type="button" class="nav-btn nav-btn--prev" aria-label="Previous month">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                    </svg>
+                </button>
+                <h2 class="current-month">December 2022</h2>
+                <button type="button" class="nav-btn nav-btn--next" aria-label="Next month">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                    </svg>
+                </button>
+            </div>
+            <table class="calendar-table" role="grid">
+                <thead>
+                    <tr>
+                        <th scope="col" abbr="Sunday">S</th>
+                        <th scope="col" abbr="Monday">M</th>
+                        <th scope="col" abbr="Tuesday">T</th>
+                        <th scope="col" abbr="Wednesday">W</th>
+                        <th scope="col" abbr="Thursday">T</th>
+                        <th scope="col" abbr="Friday">F</th>
+                        <th scope="col" abbr="Saturday">S</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><button class="day-cell day-cell--empty" disabled aria-hidden="true"></button></td>
+                        <td><button class="day-cell day-cell--empty" disabled aria-hidden="true"></button></td>
+                        <td><button class="day-cell day-cell--empty" disabled aria-hidden="true"></button></td>
+                        <td><button class="day-cell day-cell--empty" disabled aria-hidden="true"></button></td>
+                        <td><button type="button" class="day-cell" aria-label="December 1, 2022">1</button></td>
+                        <td><button type="button" class="day-cell" aria-label="December 2, 2022">2</button></td>
+                        <td><button type="button" class="day-cell" aria-label="December 3, 2022">3</button></td>
+                    </tr>
+                    <tr>
+                        <td><button type="button" class="day-cell" aria-label="December 4, 2022">4</button></td>
+                        <td><button type="button" class="day-cell" aria-label="December 5, 2022">5</button></td>
+                        <td><button type="button" class="day-cell" aria-label="December 6, 2022">6</button></td>
+                        <td><button type="button" class="day-cell" aria-label="December 7, 2022">7</button></td>
+                        <td><button type="button" class="day-cell" aria-label="December 8, 2022">8</button></td>
+                        <td><button type="button" class="day-cell" aria-label="December 9, 2022">9</button></td>
+                        <td><button type="button" class="day-cell" aria-label="December 10, 2022">10</button></td>
+                    </tr>
+                    <tr>
+                        <td><button type="button" class="day-cell" aria-label="December 11, 2022">11</button></td>
+                        <td><button type="button" class="day-cell" aria-label="December 12, 2022">12</button></td>
+                        <td><button type="button" class="day-cell" aria-label="December 13, 2022">13</button></td>
+                        <td><button type="button" class="day-cell" aria-label="December 14, 2022">14</button></td>
+                        <td><button type="button" class="day-cell day-cell--today" aria-label="December 15, 2022 (Today)">15</button></td>
+                        <td><button type="button" class="day-cell" aria-label="December 16, 2022">16</button></td>
+                        <td><button type="button" class="day-cell" aria-label="December 17, 2022">17</button></td>
+                    </tr>
+                    <tr>
+                        <td><button type="button" class="day-cell" aria-label="December 18, 2022">18</button></td>
+                        <td><button type="button" class="day-cell" aria-label="December 19, 2022">19</button></td>
+                        <td><button type="button" class="day-cell" aria-label="December 20, 2022">20</button></td>
+                        <td><button type="button" class="day-cell" aria-label="December 21, 2022">21</button></td>
+                        <td><button type="button" class="day-cell" aria-label="December 22, 2022">22</button></td>
+                        <td><button type="button" class="day-cell" aria-label="December 23, 2022">23</button></td>
+                        <td><button type="button" class="day-cell" aria-label="December 24, 2022">24</button></td>
+                    </tr>
+                    <tr>
+                        <td><button type="button" class="day-cell" aria-label="December 25, 2022">25</button></td>
+                        <td><button type="button" class="day-cell" aria-label="December 26, 2022">26</button></td>
+                        <td><button type="button" class="day-cell" aria-label="December 27, 2022">27</button></td>
+                        <td><button type="button" class="day-cell" aria-label="December 28, 2022">28</button></td>
+                        <td><button type="button" class="day-cell" aria-label="December 29, 2022">29</button></td>
+                        <td><button type="button" class="day-cell" aria-label="December 30, 2022">30</button></td>
+                        <td><button type="button" class="day-cell" aria-label="December 31, 2022">31</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>
