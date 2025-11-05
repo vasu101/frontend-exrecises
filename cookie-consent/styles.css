@@ -1,0 +1,191 @@
+:root {
+    --color-primary: #000;
+    --color-white: #fff;
+    --color-gray-light: #f5f5f5;
+    
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    
+    --border-radius-sm: 0.375rem;
+    --border-radius-md: 0.5rem;
+    --border-radius-lg: 1rem;
+    
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.3);
+    
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(135deg, #FFB4B4 0%, #EAC8A6 100%);
+    min-height: 100vh;
+    padding: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.demo-header {
+    background: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.demo-content {
+    background: var(--color-white);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-md);
+    flex: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.demo-test {
+    color: var(--color-gray-light);
+    margin-bottom: var(--spacing-md);
+}
+
+.cookie-consent {
+    position: fixed;
+    bottom: var(--spacing-xl);
+    right: var(--spacing-xl);
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    max-width: 20rem;
+    box-shadow: var(--spacing-lg);
+    animation: slideIn 0.5s ease;
+    z-index: 1000;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.cookie-consent.hidden {
+    display: none;
+}
+
+.cookie-consent__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-lg);
+}
+
+.cookie-consent__icon {
+    width: 3rem;
+    height: 3rem;
+    flex-shrink: 0;
+}
+
+.cookie-consent__close {
+    background: none;
+    border: none;
+    color: var(--color-white);
+    cursor: pointer;
+    padding: var(--spacing-xs);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius-sm);
+    transition: var(--transition);
+    margin-left: auto;
+}
+
+.cookie-consent__close:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.cookie-consent__close:active {
+    transform: scale(0.95);
+}
+
+.cookie-consent__close svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.cookie-consent__content {
+    margin-bottom: var(--spacing-lg);
+}
+
+.cookie-consent__message {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.cookie-consent__actions {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.cookie-consent__button {
+    flex: 1;
+    padding: var(--spacing-md);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: inherit;
+}
+
+.cookie-consent__button--primary {
+    background: var(--color-white);
+    color: var(--color-primary);
+}
+
+.cookie-consent__button--primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+}
+
+.cookie-consent__button--secondary {
+    background: transparent;
+    color: var(--color-white);
+    border: 2px solid var(--color-white);
+}
+
+.cookie-consent__button--secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.cookie-consent__button:active {
+    transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+    .cookie-consent {
+        bottom: var(--spacing-md);
+        right: var(--spacing-md);
+        left: var(--spacing-md);
+        max-width: none;
+    }
+
+    .cookie-consent__actions {
+        flex-direction: column;
+    }
+}
