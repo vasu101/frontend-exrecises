@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Profile Form</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <main class="form-container">
+        <div class="form-wrapper">
+            <section class="form-section">
+                <div class="form-header">
+                    <h1 class="form-title">Update Your Profile</h1>
+                    <p class="form-subtitle">Comlete all fields to reach 100% profile completeness</p>
+                </div>
+
+                <form id="profileForm" novalidate>
+                    <!--Full Name-->
+                    <div class="form-group">
+                        <label for="fullName" class="form-label form-label--required">Full Name</label>
+                        <div class="input-wrapper">
+                            <input 
+                                type="text"
+                                id="fullName"
+                                name="fullName"
+                                class="form-input"
+                                placeholder="Wha should we call you?"
+                                aria-required="true"
+                                aria-describedby="fullName-error"
+                            >
+                        </div>
+                        <div id="fullName-error" class="error-message" role="alert" aria-live="polite">
+                            <svg class="error-icon" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Please enter you full name</span>
+                        </div>
+                    </div>
+
+                    <!--Email-->
+                    <div class="form-group">
+                        <label for="email" class="form-label form-label--required">Email</label>
+                        <div class="input-wrapper">
+                            <input 
+                                type="email"
+                                name="email" 
+                                id="email"
+                                class="form-input"
+                                placeholder="How should we contact you?"
+                                aria-required="true"
+                                aria-describedby="email-error"
+                            >
+                        </div>
+                        <div id="email-error" class="error-message" role="alert" aria-live="polite">
+                            <svg class="error-icon" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Please enter a valid email address</span>
+                        </div>
+                    </div>
+
+                    <!--Password-->
+                    <div class="form-group">
+                        <label for="password" class="form-label form-label--required">Enter Password</label>
+                        <div class="password-wrapper">
+                            <input 
+                                type="password"
+                                id="password"
+                                name="password"
+                                class="form-input"
+                                placeholder="xxxxxxxx"
+                                aria-required="true"
+                                aria-describedby="password-error password-toggle"    
+                            >
+                            <button 
+                                type="button"
+                                id="password-toggle"
+                                class="password-toggle"
+                                aria-label="Show password"
+                                data-target="password"
+                            >
+                                <svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                        </div>
+                        <div id="password-error" class="error-message" role="alert" aria-live="polite">
+                            <svg class="error-icon" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Password must be at least 8 characters</span>
+                        </div>
+                    </div>
+
+                    <!--Confirm Password-->
+                    <div class="form-group">
+                        <label for="confirmPassword" class="form-label form-label--required">Confirm Password</label>
+                        <div class="password-wrapper">
+                            <input 
+                                type="text"
+                                id="confirmPassword"
+                                name="confirmPassword"
+                                class="form-input"
+                                placeholder="Re-enter your password"
+                                aria-required="true"
+                                aria-describedby="confirmPassword-error"
+                            >
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                aria-label="Show password"
+                                data-target="confirmPassword"
+                            >
+                                <svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                            <div id="confirmPassword-error" class="error-message" role="alert" aria-live="polite">
+                                <svg class="error-icon" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Passwords do not match</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-button">Update Profile</button>
+                </form>
+            </section>
+
+            <!--RIGHT SIDE: Progress-->
+            <aside class="progress-section" aria-label="Profile completion status">
+                <div class="progress-circle-wrapper">
+                    <div class="progress-circle" role="img" aria-label="Profile completeness: 0%">
+                        <svg width="160" height="160" viewBox="0 0 160 160">
+                            <circle class="progress-circle-bg" cx="80" cy="80" r="70"></circle>
+                            <circle 
+                                class="progress-circle-fill" 
+                                cx="80" 
+                                cy="80" 
+                                r="70"
+                                stroke-dasharray="439.8"
+                                stroke-dashoffset="439.8"
+                                id="progressCircle"
+                            ></circle>
+                        </svg>
+                        <div class="progress-text" id="progressText" aria-live="polite">0%</div>
+                        <h2 class="progress-label">Profile Completeness</h2>
+                    </div>
+                </div>
+                
+                <!--Checklist-->
+                <div class="checklist">
+                    <h3 class="checklist-title">Requirements</h3>
+                    <ul class="checklist-items" role="list">
+                        <li class="checklist-item" id="check-fullName">
+                            <div class="checklist-icon checklist-icon--incomplete">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <span class="checklist-text">Full Name</span>
+                        </li>
+                        <li class="checklist-item" id="check-email">
+                            <div class="checklist-icon checklist-icon--incomplete">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <span class="checklist-text">Email Address</span>
+                        </li>
+                        <li class="checklist-item" id="check-password">
+                            <div class="checklist-icon checklist-icon--incomplete">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <span class="checklist-text">Enter Password</span>
+                        </li>
+                        <li class="checklist-item" id="check-confirmPassword">
+                            <div class="checklist-icon checklist-icon--incomplete">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <span class="checklist-text">Confirm Password</span>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </main>
+    <script src="./script.js"></script>
+</body>
+</html>
