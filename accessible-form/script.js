@@ -23,7 +23,6 @@ const validationState = {
     confirmPassword: false
 };
 
-// Password toggle functionality
 passwordToggles.forEach(toggle => {
     toggle.addEventListener('click', function() {
         const targetId = this.getAttribute('data-target');
@@ -35,7 +34,6 @@ passwordToggles.forEach(toggle => {
     });
 });
 
-// Validation function
 function validateFullName(value) {
     return value.trim().length >= 2;
 }
@@ -46,29 +44,25 @@ function validateEmail(value) {
 }
 
 function validatePassword(value) {
-    return value.length >= 8;
+    return value.length >= 2;
 }
 
 function validateConfirmPassword(password, confirmPassword) {
-    return password.length >= 8 && password === confirmPassword;
+    return password.length >= 2 && password === confirmPassword;
 }
 
-// Update field state
 function updateFieldState(fieldName, isValid) {
     const input = inputs[fieldName];
     const errorMessage = document.getElementById(`${fieldName}-error`);
     const checklistItem = document.getElementById(`check-${fieldName}`);
 
-    //Update validation state
     validationState[fieldName] = isValid;
 
-    //Update input styling
     input.classList.remove('error', 'success');
     if(input.value) {
         input.classList.add(isValid ? 'success' : 'error');
     }
 
-    //Show/hide error message
     if(input.value && !isValid) {
         errorMessage.classList.add('show');
         input.setAttribute('aria-invalid', 'true');
@@ -77,7 +71,6 @@ function updateFieldState(fieldName, isValid) {
         input.setAttribute('aria-invalid', 'false');
     }
 
-    //Update checklist
     if(isValid) {
         checklistItem.classList.add('completed');
         checklistItem.querySelector('.checklist-icon').classList.remove('checklist-icon--incomplete');
@@ -117,7 +110,7 @@ inputs.password.addEventListener('input', (e) => {
     updateFieldState('password', isValid);
 
     if(inputs.confirmPassword.value) {
-        updateFieldState('confirmPassword', validateConfirmPassword(e.target.value, inputs.password.value));
+        updateFieldState('confirmPassword', validateConfirmPassword(inputs.password.value, e.target.value));
     }
 });
 
@@ -133,7 +126,7 @@ form.addEventListener('submit', (e) => {
     updateFieldState('password', validatePassword(inputs.password.value));
     updateFieldState('confirmPassword', validateConfirmPassword(inputs.password.value, inputs.confirmPassword.value));
 
-    const allValid = Object.values(ValidityState).every(Boolean);
+    const allValid = Object.values(validationState).every(Boolean);
 
     if(allValid) {
         alert('Profile updated successfully!\n\nForm data:\n' + 
@@ -142,13 +135,33 @@ form.addEventListener('submit', (e) => {
             `Password: ${'*'.repeat(inputs.password.value.length)}`
         );
         form.reset();
+
+        Object.keys(validationState).forEach(key => {
+            validationState[key] = false;
+        });
+
+        Object.values(inputs).forEach(input => {
+            input.classList.remove('success', 'error');
+            input.setAttribute('aria-invalid', 'false');
+        });
+
+        document.querySelectorAll('.error-message').forEach(msg => {
+            msg.classList.remove('show');
+        });
+
+        document.querySelectorAll('.checklist-item').forEach(item => {
+            item.classList.remove('completed');
+            const icon = item.querySelector('.checklist-icon');
+            icon.classList.remove('checklist-icon--complete');
+            icon.classList.add('checklist-icon--incomplete');
+        });
+
+        updateProgress();
     } else {
         const firstInvalidField = Object.keys(validationState).find(key => !validationState[key]);
         if(firstInvalidField) {
             inputs[firstInvalidField].focus();
         }
-        alert('Please fic the errors before submitting.');
+        alert('Please fix the errors before submitting.');
     }
 });
-
-updateProgress();
