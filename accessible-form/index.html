@@ -12,10 +12,10 @@
             <section class="form-section">
                 <div class="form-header">
                     <h1 class="form-title">Update Your Profile</h1>
-                    <p class="form-subtitle">Comlete all fields to reach 100% profile completeness</p>
+                    <p class="form-subtitle">Complete all fields to reach 100% profile completeness</p>
                 </div>
 
-                <form id="profileForm" novalidate>
+                <form id="profileForm">
                     <!--Full Name-->
                     <div class="form-group">
                         <label for="fullName" class="form-label form-label--required">Full Name</label>
@@ -25,7 +25,7 @@
                                 id="fullName"
                                 name="fullName"
                                 class="form-input"
-                                placeholder="Wha should we call you?"
+                                placeholder="What should we call you?"
                                 aria-required="true"
                                 aria-describedby="fullName-error"
                             >
@@ -99,7 +99,7 @@
                         <label for="confirmPassword" class="form-label form-label--required">Confirm Password</label>
                         <div class="password-wrapper">
                             <input 
-                                type="text"
+                                type="password"
                                 id="confirmPassword"
                                 name="confirmPassword"
                                 class="form-input"
@@ -118,13 +118,13 @@
                                     <circle cx="12" cy="12" r="3"></circle>
                                 </svg>
                             </button>
+                        </div>
                             <div id="confirmPassword-error" class="error-message" role="alert" aria-live="polite">
                                 <svg class="error-icon" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
                                 </svg>
                                 <span>Passwords do not match</span>
                             </div>
-                        </div>
                     </div>
 
                     <button type="submit" class="submit-button">Update Profile</button>
@@ -148,8 +148,8 @@
                             ></circle>
                         </svg>
                         <div class="progress-text" id="progressText" aria-live="polite">0%</div>
-                        <h2 class="progress-label">Profile Completeness</h2>
                     </div>
+                    <h2 class="progress-label">Profile Completeness</h2>
                 </div>
                 
                 <!--Checklist-->
