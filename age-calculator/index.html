@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Age Calculator</h1>
+        <p class="subtitle">Scroll to select your birth date</p>
+        
+        <div class="picker-container">
+            <div class="picker-label">Enter your birth date:</div>
+            <div class="date-picker">
+                <div class="picker-column">
+                    <div class="picker-highlight"></div>
+                    <div class="picker-scroll" id="dayPicker"></div>
+                </div>
+                <div class="picker-column">
+                    <div class="picker-highlight"></div>
+                    <div class="picker-scroll" id="monthPicker"></div>
+                </div>
+                <div class="picker-column">
+                    <div class="picker-highlight"></div>
+                    <div class="picker-scroll" id="yearPicker"></div>
+                </div>
+            </div>
+        </div>
+        
+        <button onclick="calculateAge()">Calculate Age</button>
+        
+        <div id="error" class="error"></div>
+        <div id="result"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/3.7.2/luxon.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
